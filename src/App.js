@@ -26,18 +26,16 @@ function App() {
             return item;
           }
         });
-        return {input:state.input,arr:[...data2],info:state.info};
+        return {input:state.input,arr:[...data2]};
       case "RMA":
-        return {input:state.input,arr:[],info:state.info}
-      case "RECORDS":
-        return {input:state.input,arr:state.arr,info:{...state.info,[action.payload.target.name]:action.payload.target.value}}
+        return {input:state.input,arr:[]};
       default:
         return state;
     }
   }
 const searchRef=React.useRef(null);
 
-const [state,dispatch]=React.useReducer(reducer,{input:"",arr:[],info:{cname:"",cemail:"",caddress:"",caddress2:"",ccity:"",cstate:""}})
+const [state,dispatch]=React.useReducer(reducer,{input:"",arr:[]})
 
   return (
     <div className="App">

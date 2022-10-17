@@ -12,7 +12,9 @@
   text-decoration: none;
   margin-left: 20px;
 }
-
+.brn:hover{
+  color: rgb(223, 150, 25);
+}
 .navbar-nav{
   margin-left: auto;
   font-weight: bold;
@@ -20,6 +22,9 @@
 }
 .nav-link{
   color: white;
+}
+.nav-link:hover{
+  color:rgb(223, 150, 25); ;
 }
 #carouselExampleIndicators{
   box-shadow:3px 3px 10px -2px;

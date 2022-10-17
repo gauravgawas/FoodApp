@@ -2,10 +2,13 @@ import React from "react";
 import { Context } from "../App";
 export default function Nav(){
   const {dispatch,searchRef}=React.useContext(Context);
-  
+  function searchIt(e){
+    e.preventDefault();
+    dispatch({type:"CHANGE"});
+  }
   return(
           <nav class="navbar navbar-expand-lg container-fluid">
-          <a className="brand" href="/"><img className="logo" src="../Images/icons8-sunny-side-up-eggs-48.png"></img>FoodApp</a>
+          <a className="brand brn" href="/"><img className="logo" src="../Images/icons8-sunny-side-up-eggs-48.png"></img>FoodApp</a>
           <button class="navbar-toggler btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -23,7 +26,7 @@ export default function Nav(){
         <li>
         <form class="d-flex" role="search">
         <input class="form-control me-2" ref={searchRef} onKeyUpCapture={()=>dispatch({type:"CHANGE"})} type="search" placeholder="Search" aria-label="Search"></input>
-        <button class="btn btn-outline-success"  type="submit"><b>Search</b></button>
+        <button class="btn btn-outline-success" onClick={searchIt} type="submit"><b>Search</b></button>
         </form>
         </li>
       </ul>
